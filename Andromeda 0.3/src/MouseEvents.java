@@ -101,7 +101,7 @@ public class MouseEvents extends JPanel implements MouseListener, MouseMotionLis
             circle.circleX += (int) circle.vx;
             circle.circleY += (int) circle.vy;
 
-            if (circle.circleX < circle.radius){ // left wall hit
+            if (circle.circleX < circle.radius){ 
                 circle.circleX = circle.radius;
                 circle.vx = Math.abs(circle.vx);
             }
@@ -109,7 +109,7 @@ public class MouseEvents extends JPanel implements MouseListener, MouseMotionLis
                 circle.circleX = Scene.sceneX - circle.radius;
                 circle.vx = -Math.abs(circle.vx);
             }
-            if (circle.circleY < circle.radius){ // top
+            if (circle.circleY < circle.radius){ 
                 circle.circleY = circle.radius;
                 circle.vy = Math.abs(circle.vy);
             }
@@ -124,8 +124,6 @@ public class MouseEvents extends JPanel implements MouseListener, MouseMotionLis
         for (Circle circle: circleList){
             double distance = Math.sqrt(Math.pow(circle.circleX - ring.ringX, 2) + Math.pow(circle.circleY - ring.ringY, 2));
             if (distance < circle.radius + ring.radius && distance > ring.radius - circle.radius){
-                //System.out.println("collision!!!!! ahhhhhhh!");
-                //System.out.println(circle.vx);
                 circle.vx *= -1;
                 circle.vy *= -1;
             }
