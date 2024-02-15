@@ -18,7 +18,6 @@ public class Circle extends JPanel {
         super.paintComponent(g);
         g.fillOval(circleX - radius, circleY - radius, radius*2, radius*2);
         g.setColor(Color.CYAN);
-        //setBackground(Color.BLACK);
     }
 
 }
